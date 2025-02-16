@@ -1,0 +1,1 @@
+{"version":3,"file":"search.js","sources":["../../HBuilderX/plugins/uniapp-cli-vite/uniPage:/c2VhcmNoL3NlYXJjaC52dWU"],"sourcesContent":["import MiniProgramPage from 'D:/hbuilder/wallpaper/search/search.vue'\nwx.createPage(MiniProgramPage)"],"names":[],"mappings":";;;;;;;AACA,GAAG,WAAW,eAAe;"}
