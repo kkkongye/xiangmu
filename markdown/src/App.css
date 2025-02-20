@@ -107,3 +107,12 @@
     height: 50vh;
   }
 }
+
+em {
+  font-style: italic !important;
+}
+
+.editor textarea {
+  font-size: 20px;
+  line-height: 2.0;
+}
