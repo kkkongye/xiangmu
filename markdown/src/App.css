@@ -10,9 +10,11 @@
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
@@ -21,6 +23,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -47,7 +50,7 @@
 }
 
 .app {
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -61,6 +64,17 @@
   gap: 1rem;
 }
 
+.editor-container textarea {
+  opacity: 1;
+  pointer-events: auto;
+  border: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+  color: #333;
+  transition: border-color 0.3s ease;
+}
+
 .editor-container,
 .preview-container {
   flex: 1;
@@ -68,6 +82,14 @@
   border-radius: 4px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   overflow: hidden;
+}
+
+.editor-container:focus {
+  outline: none;
+}
+
+.editor-container:focus-within {
+  box-shadow: none;
 }
 
 .editor,
@@ -96,12 +118,11 @@
   padding-left: 2em;
 }
 
-/* 响应式布局 */
 @media (max-width: 768px) {
   .container {
     flex-direction: column;
   }
-  
+
   .editor-container,
   .preview-container {
     height: 50vh;
@@ -115,4 +136,54 @@ em {
 .editor textarea {
   font-size: 20px;
   line-height: 2.0;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+  color: #333;
+  transition: border-color 0.3s ease;
 }
+
+.editor textarea:focus {
+  border-color: #646cff;
+  outline: none;
+}
+
+.editor-container {
+  display: flex;
+  height: 100%;
+}
+
+.editor-container .full-height {
+  flex: 1;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.button {
+  background: linear-gradient(145deg, #6e7eaa, #3e4a8a);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 20px;  /* 调整按钮大小 */
+  margin: 10px 0;  /* 按钮上下的间距 */
+  font-size: 14px;  /* 调整字体大小 */
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.button:hover {
+  background: linear-gradient(145deg, #3e4a8a, #6e7eaa);
+  transform: scale(1.1);  /* 鼠标悬停时稍微放大按钮 */
+}
+
+.button:active {
+  transform: scale(1);  /* 点击时恢复正常大小 */
+}
+
+.export-buttons-container {
+  display: flex;
+  flex-direction: column;  /* 上下排列按钮 */
+  align-items: center;  /* 居中按钮 */
+}
+

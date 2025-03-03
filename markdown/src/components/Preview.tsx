@@ -1,11 +1,13 @@
 import React, { useMemo } from 'react';
 import { Token } from '@your-name/markdown-parser';
+import { useContent } from './ContentContext'; // 引入 context
 
 interface PreviewProps {
   tokens: Token[];
 }
 
 const Preview: React.FC<PreviewProps> = ({ tokens }) => {
+  const { setContent } = useContent(); // 获取 setContent 方法
   const renderedContent = useMemo(() => {
     const result: React.ReactNode[] = [];
     let skipUntil = -1;
@@ -185,8 +187,9 @@ const Preview: React.FC<PreviewProps> = ({ tokens }) => {
       }
     }
     return result;
+    
   }, [tokens]);
-
+  setContent(document.querySelector('.preview')?.innerHTML || '');
   return (
     <div className="preview" style={{
       padding: '1rem',
